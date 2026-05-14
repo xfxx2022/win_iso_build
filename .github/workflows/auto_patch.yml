@@ -48,7 +48,7 @@ jobs:
 
       # 0. Cleanup old runs before starting
       - name: Cleanup old runs
-        if: always()
+        if: always() && matrix.version.name == 'Win11 LTSC 2024'
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         shell: pwsh
